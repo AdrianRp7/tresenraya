@@ -30,4 +30,8 @@ export class Tile {
             throw new Error("The background is invalid, You can only insert a valid url");
         }
     }
+
+    public returnActualTile(): string {
+        return this.background === "" ? this.icon : this.background;
+    }
 }

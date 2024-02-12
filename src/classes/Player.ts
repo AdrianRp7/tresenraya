@@ -1,12 +1,14 @@
-export class Jugador {
+export class Player {
     private _name: string;
     private _text: string;
     private _background: string;
+    public playsWin: number;
 
     constructor(name: string, text: string, background: string = '') {
         this._name = name;
         this._text = text;
         this._background = background;
+        this.playsWin = 0;
     }
 
     public get name(): string {
@@ -43,5 +45,9 @@ export class Jugador {
         } else {
             throw new Error("The background is invalid, You can only insert a valid url");
         }
+    }
+
+    public returnPlayerSymbol(): string {
+        return this.background === "" ? this.text : this.background;
     }
 } 
